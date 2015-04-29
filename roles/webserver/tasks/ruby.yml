@@ -4,43 +4,48 @@
   action: apt update_cache=yes upgrade=yes
 
 - name: install ruby dependencies 
-  action: apt pkg=$item state=installed
+  action: apt pkg={{ item }} state=installed
   with_items:
-    - build-essential
+    - autoconf
     - automake
     - bison
-    - autoconf
-    - pkg-config
+    - build-essential
+    - curl
+    - exuberant-ctags
+    - git-core
     - libreadline6
     - libreadline6-dev
-    - openssl
+    - libreadline-dev
+    - libsqlite3-0
+    - libsqlite3-dev
     - libssl-dev
-    - curl
-    - git-core
+    - libyaml-dev
+    - libc6-dev
+    - libncurses5-dev
+    - libtool
+    - libxml2-dev
+    - libxslt1-dev
+    - openssl
+    - sqlite3
     - subversion
     - zlib1g
     - zlib1g-dev
-    - libyaml-dev
-    - libsqlite3-dev
-    - libxml2-dev
-    - libxslt1-dev
-    - curl
 
 # Install correct version of ruby from source
 - name: ruby-from-src | ensure directory temporary ruby download directory is present
-  file: state=directory path=$rubyTmpDir
+  file: state=directory path={{rubyTmpDir}}
 
 - name: ruby-from-src | Download ruby source 
-  get_url: url=$rubyUrl dest=$rubyTmpDir
+  get_url: url={{ rubyUrl }} dest={{rubyTmpDir}}
 
 - name: ruby-from-src | ensure ruby is extracted
-  command: tar -xf $rubyCompressedFile chdir=$rubyTmpDir creates=$tmpRubyPath
+  command: tar -xf {{rubyCompressedFile}} chdir={{rubyTmpDir}} creates={{tmpRubyPath}}
 
 - name: ruby-from-src | ensure ruby is configured
-  command: ./configure chdir=$tmpRubyPath creates=$tmpRubyPath/Makefile
+  command: ./configure chdir={{tmpRubyPath}} creates="{{tmpRubyPath}}/Makefile"
 
 - name: ruby-from-src | ensure ruby is compiled
-  command: make chdir=$tmpRubyPath creates=$tmpRubyPath/ruby
+  command: make chdir={{tmpRubyPath}} creates="{{tmpRubyPath}}/ruby"
 
 - name: ruby-from-src | ensure ruby is installed
-  command: make install chdir=$tmpRubyPath creates=/usr/local/bin/ruby
+  command: make install chdir={{tmpRubyPath}} creates=/usr/local/bin/ruby

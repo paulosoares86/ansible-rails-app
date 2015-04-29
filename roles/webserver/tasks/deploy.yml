@@ -1,5 +1,5 @@
 - name: Install app dependencies 
-  action: apt pkg=$item state=installed
+  action: apt pkg={{ item }} state=installed
   with_items:
     - libpq-dev
     - nodejs
@@ -8,7 +8,7 @@
   user: name=deploy comment="Application deployment user"
 
 - name: Create deployment directory
-  file: path=/webapps/{{ app_name }} owner=deploy group=deploy state=directory
+  file: path=/home/rails/{{ app_name }} owner=deploy group=deploy state=directory
 
 - name: Add puma runner
   template: src=usr_local_bin_run-puma.j2 dest=/usr/local/bin/run-puma force=yes mode=755
