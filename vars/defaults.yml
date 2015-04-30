@@ -1,8 +1,9 @@
 ## webapp
 
 webserver_name: tagprint.chickenkiller.com
-deploy_directory: /home/rails/tagprint
+deploy_directory: /home/deploy/tagprint
 app_name: tagprint
+mysql_root_password: paulo123
 
 ## stolen from https://github.com/jgrowl/ansible-playbook-ruby-from-src
 rubyTmpDir: /usr/local/src

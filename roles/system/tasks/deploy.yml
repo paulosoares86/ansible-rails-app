@@ -1,0 +1,7 @@
+- name: Create Deploy user
+  user:
+    name=deploy
+    password=$6$xKIE5BY4Zau$L7NgPC0A2bfhpppqlQ8/4Nw8vxS4IIxPfDOp83JMBCuTiCAf0YihVZTil/1RTiUDa5Y/ieU3bKAKnhWes4waH.
+    groups=sudo
+    append=yes
+    shell=/bin/bash

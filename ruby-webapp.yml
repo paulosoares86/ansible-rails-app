@@ -8,3 +8,4 @@
     - webserver
     - database
     - sidekiq
+    - system
