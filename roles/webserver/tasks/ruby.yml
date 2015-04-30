@@ -25,6 +25,7 @@
     - libtool
     - libxml2-dev
     - libxslt1-dev
+    - libv8-dev
     - openssl
     - sqlite3
     - subversion

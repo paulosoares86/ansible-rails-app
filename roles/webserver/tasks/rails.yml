@@ -1,2 +1,5 @@
+- name: install_bundler
+  shell: cd; bash -lc "gem install bundle bundler"
+
 - name: Ruby on Rails 4.2
-  gem: name=rails version=4.2 state=present
+  shell: cd; bash -lc "gem install rails"

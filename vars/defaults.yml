@@ -2,6 +2,7 @@
 
 webserver_name: tagprint.chickenkiller.com
 deploy_directory: /home/deploy/tagprint
+app_directory: /home/deploy/tagprint/api
 app_name: tagprint
 mysql_root_password: paulo123
 
@@ -11,3 +12,4 @@ rubyUrl: http://cache.ruby-lang.org/pub/ruby/2.2/ruby-2.2.2.tar.gz
 rubyCompressedFile: ruby-2.2.2.tar.gz
 rubyName: ruby-2.2.2
 tmpRubyPath: "{{ rubyTmpDir }}/{{ rubyName }}"
+ruby_version: 2.2.2
