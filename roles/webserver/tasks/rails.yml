@@ -1,5 +1,5 @@
 - name: install_bundler
-  shell: cd; bash -lc "gem install bundle bundler"
+  shell: cd; bash -lc "gem install bundle"
 
 - name: Ruby on Rails 4.2
   shell: cd; bash -lc "gem install rails"

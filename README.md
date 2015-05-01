@@ -1,12 +1,10 @@
-# A small Rails/Sinatra/rack-ready playbook for Ansible
+# My Rails Stack
 
 It installs:
 
-- nginx
-- Puma (jungle)
-- Ruby 2.0.0-p247
-- PostgreSQL
-- memcached
+- nginx (with passenger)
+- Ruby (version configurable)
+- Mysql
 - Redis (for Sidekiq)
 
 Change the app name, host and deploy directory in <code>vars/defaults.yml</code>.
