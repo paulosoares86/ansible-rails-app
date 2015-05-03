@@ -2,10 +2,10 @@
 
 It installs:
 
+- create user deploy
 - nginx (with passenger)
-- Ruby (version configurable)
+- Rails (version configurable)
 - Mysql
-- Redis (for Sidekiq)
 
 Change the app name, host and deploy directory in <code>vars/defaults.yml</code>.
 

@@ -1,0 +1,5 @@
+- name: Install development dependencies
+  action: apt pkg={{item}} state=installed update_cache=true
+  sudo: yes
+  with_items:
+    - git

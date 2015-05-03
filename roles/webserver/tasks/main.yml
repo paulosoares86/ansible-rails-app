@@ -1,4 +1,4 @@
-- include: ruby.yml tags=ruby
+- include: develop.yml tags=develop
 - include: nginx.yml tags=nginx
 - include: deploy.yml tags=deploy
 - include: rails.yml tags=rails

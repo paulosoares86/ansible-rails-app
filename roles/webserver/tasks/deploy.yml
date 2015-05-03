@@ -1,9 +1,3 @@
-- name: Install app dependencies 
-  action: apt pkg={{ item }} state=installed
-  with_items:
-    - libpq-dev
-    - nodejs
-
 - name: Create deployment user
   user: name=deploy comment="Application deployment user"
 
